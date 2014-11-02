@@ -1,25 +1,14 @@
 class Hamming
-  def Initialize
-  end
 
-  def compute(a,b)
+  def self.compute(a,b)
 
-    if a.size > b.size
-      length = b.size
-    else
-      length = a.size
-    end
+    a.size > b.size ? length = b.size - 1: length = a.size - 1
 
     difference = 0
-    0.upto(length-1) do |value|
 
-      if a[value] == b[value]
-        difference += 0
-      else
-        difference += 1
-      end
-    end
-    return difference
+    (0..length).map { |i| difference += 1 if a[i] != b[i] }
+
+    difference
 
   end
 
