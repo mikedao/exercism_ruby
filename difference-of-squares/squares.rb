@@ -6,30 +6,15 @@ class Squares
   end
 
   def square_of_sums
-    array = []
-    sum = 0
-
-    (0..@number).each do |n|
-      array[n] = n
-    end
-
-      array.each { |a| sum += a }
-    return sum * sum
+    (1..number).reduce(:+) ** 2
   end
 
   def sum_of_squares
-    array = []
-    (0..@number).each do |n|
-      array[n] = n
-    end
-
-    sum = 0
-    array.each { |a| sum += a * a}
-    return sum
+    ((1..number).map { |i| i*i }).reduce(:+)
   end
 
   def difference
-    sum_of_squares > square_of_sums ? sum_of_squares - square_of_sums : square_of_sums - sum_of_squares
+    square_of_sums - sum_of_squares
   end
 
 end
