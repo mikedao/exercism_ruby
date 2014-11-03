@@ -2,8 +2,8 @@ module RomanNumerable
 
 
 
-  def to_roman
-    'I'
+  def self.to_roman
+    num = self
   end
 end
 
